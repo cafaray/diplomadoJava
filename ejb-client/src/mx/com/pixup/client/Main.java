@@ -14,7 +14,8 @@ public class Main {
         try{
 		// Generar contexto con Jboss
 		Context context = getContext();
-                FacadeWebRemote manejaUsuario = (FacadeWebRemote)context.lookup("pixup-eap/pixup-eap-ejb.jar/FacadeWeb!remote");
+                FacadeWebRemote manejaUsuario = 
+                        (FacadeWebRemote)context.lookup("pixup-eap/pixup-eap-ejb.jar/FacadeWeb!remote");
                 Usuario usuario = new Usuario();
                 try{
                     usuario = manejaUsuario.validaUsuario("aruiz@gmail.com", "elPaso");

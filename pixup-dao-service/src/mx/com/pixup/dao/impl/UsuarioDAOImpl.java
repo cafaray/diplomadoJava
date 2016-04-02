@@ -64,14 +64,14 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             while(rst.next()){
                 usuario = new Usuario();
                 usuario.setId(rst.getInt(1));
-                usuario.setNombre(rst.getNString(2));
-                usuario.setApellidoPaterno(rst.getNString(3));
-                usuario.setApellidoMaterno(rst.getNString(4));
+                usuario.setNombre(rst.getString(2));
+                usuario.setApellidoPaterno(rst.getString(3));
+                usuario.setApellidoMaterno(rst.getString(4));
                 usuario.setFechaNacimiento(rst.getDate(5));
                 usuario.setEmail(cuenta);
                 usuario.setPassword(contrasenia);
                 usuario.setGenero(rst.getString(6));
-                usuario.setNumeroTelefonico(rst.getNString(7));
+                usuario.setNumeroTelefonico(rst.getString(7));
             }
             return usuario;
         }catch(SQLException e){

@@ -5,7 +5,6 @@
         <data xmlns="http://www.netbeans.org/ns/j2ee-ejbjarproject/3">
             <name>pixup-back-services</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
-            <explicit-platform explicit-source-supported="true"/>
             <included-library dirs="200">reference.pixup-model.jar</included-library>
             <included-library dirs="200">reference.pixup-bo.jar</included-library>
             <source-roots>

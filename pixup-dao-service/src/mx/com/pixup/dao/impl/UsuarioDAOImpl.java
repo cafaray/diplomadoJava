@@ -1,6 +1,5 @@
 package mx.com.pixup.dao.impl;
 
-import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

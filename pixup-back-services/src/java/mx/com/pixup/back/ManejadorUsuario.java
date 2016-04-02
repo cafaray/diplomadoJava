@@ -1,12 +1,14 @@
 package mx.com.pixup.back;
 
 import javax.ejb.Stateless;
+
 import mx.com.pixup.bo.UsuarioBO;
 import mx.com.pixup.bo.exception.PixUpBOException;
 import mx.com.pixup.bo.impl.UsuarioBOImpl;
 import mx.com.pixup.model.Usuario;
 
-@Stateless
+
+@Stateless(name = "ManejadorUsuario")
 public class ManejadorUsuario implements ManejadorUsuarioLocal {
 
     private final UsuarioBO bo;

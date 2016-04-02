@@ -5,8 +5,6 @@ import mx.com.pixup.bo.exception.PixUpBOException;
 import mx.com.pixup.model.Usuario;
 
 @Local
-public interface FacadeLocal {
-
+public interface FacadeLocal  {
     Usuario registraUsuario(Usuario usuario) throws PixUpBOException;
-    
 }

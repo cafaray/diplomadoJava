@@ -1,0 +1,14 @@
+/pixup-bo/dist/
+/pixup-model/dist/
+/pixup-model/build/
+/pixup-bo/build/
+/pixup-dao-service/build/
+/pixup-dao-service/dist/
+/pixup-back-services/build/
+/pixup-back-services/dist/
+/pixup-client/nbproject/private/
+/pixup-client/build/
+/pixup-client/dist/
+/ejb-client/nbproject/private/
+/ejb-client/build/
+/ejb-client/dist/

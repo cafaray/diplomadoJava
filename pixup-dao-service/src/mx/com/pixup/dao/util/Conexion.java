@@ -109,17 +109,22 @@ public class Conexion {
     public Connection getConnectionMySql(String cadena, String usuario, String contrasenia) throws PixUpDAOException {
         Connection cn;
         try {
-            Class.forName(JDBC_MYSQL_DRIVER).newInstance();
+            Class.forName(JDBC_MYSQL_DRIVER);
         } catch (ClassNotFoundException e) {
             e.printStackTrace(System.out);              
-            throw new PixUpDAOException("Imposible localizar la clase "+JDBC_MYSQL_DRIVER+", no se ha logrado la conexi�n a la base de datos.", e);
-        } catch (IllegalAccessException e){
-            e.printStackTrace(System.out);
-            throw new PixUpDAOException("Imposible acceder la clase "+JDBC_MYSQL_DRIVER+", no se ha logrado la conexi�n a la base de datos.", e);
-        } catch (InstantiationException e){
-            e.printStackTrace(System.out);
-            throw new PixUpDAOException("Imposible generar la instancia de la clase "+JDBC_MYSQL_DRIVER+", no se ha logrado la conexi�n a la base de datos.", e);
+            throw new PixUpDAOException("Imposible localizar la clase "+JDBC_MYSQL_DRIVER+", no se ha logrado la conexión a la base de datos.", e);
         }
+//            Class.forName(JDBC_MYSQL_DRIVER).newInstance();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace(System.out);              
+//            throw new PixUpDAOException("Imposible localizar la clase "+JDBC_MYSQL_DRIVER+", no se ha logrado la conexi�n a la base de datos.", e);
+//        } catch (IllegalAccessException e){
+//            e.printStackTrace(System.out);
+//            throw new PixUpDAOException("Imposible acceder la clase "+JDBC_MYSQL_DRIVER+", no se ha logrado la conexi�n a la base de datos.", e);
+//        } catch (InstantiationException e){
+//            e.printStackTrace(System.out);
+//            throw new PixUpDAOException("Imposible generar la instancia de la clase "+JDBC_MYSQL_DRIVER+", no se ha logrado la conexi�n a la base de datos.", e);
+//        }
         try {
             cn = DriverManager.getConnection(cadena, usuario, contrasenia);
             conexion = cn;

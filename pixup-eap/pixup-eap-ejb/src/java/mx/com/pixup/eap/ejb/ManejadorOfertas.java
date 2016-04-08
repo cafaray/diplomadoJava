@@ -1,4 +1,3 @@
-
 package mx.com.pixup.eap.ejb;
 
 import java.util.List;
@@ -13,11 +12,6 @@ import mx.com.pixup.model.wrapper.OfertaWrapper;
 public class ManejadorOfertas implements ManejadorOfertasRemote {
 
     private static final OfertaBO bo = new OfertaBOImpl();
-    
-    @Override
-    public Oferta registrar(Oferta oferta) throws PixUpBOException {
-        return bo.agregar(oferta);
-    }
 
     @Override
     public void eliminar(int identificador) throws PixUpBOException {
@@ -29,6 +23,9 @@ public class ManejadorOfertas implements ManejadorOfertasRemote {
         return bo.listarVigentes();
     }
 
-    
+    @Override
+    public Oferta registrar(Oferta oferta) throws PixUpBOException {
+        return bo.agregar(oferta);
+    }
     
 }

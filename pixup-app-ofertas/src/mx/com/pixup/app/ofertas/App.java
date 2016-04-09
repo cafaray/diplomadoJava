@@ -24,6 +24,7 @@ public class App {
             context = getContext();
             manejador = (ManejadorOfertasRemote) context.lookup("pixup-eap/pixup-eap-ejb.jar/ManejadorOfertas!remote");
             System.out.println("Listos para iniciar");
+//            cerrarConexion();
             manejarOfertas();
         } catch (PixUpBOException e) {
             e.printStackTrace(System.out);

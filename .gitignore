@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+/pixup-model/dist/
+/pixup-dao-service/build/
+/pixup-dao-service/dist/
+/pixup-model/build/
+/pixup-bo/dist/
+/pixup-bo/build/
+/pixup-app-ofertas/nbproject/private/
+/pixup-app-ofertas/build/
+/pixup-app-ofertas/dist/
+=======
 /pixup-bo/dist/
 /pixup-model/dist/
 /pixup-model/build/
@@ -12,3 +23,19 @@
 /ejb-client/nbproject/private/
 /ejb-client/build/
 /ejb-client/dist/
+>>>>>>> 3172ab1e0848d11b61298a9453190dc70d37037f
+/pixup-eap/pixup-eap-ejb/build/
+/pixup-eap/pixup-eap-ejb/dist/
+/pixup-eap-MDB/nbproject/private/
+/sample-mdb/nbproject/private/
+/sample-mdb/sample-mdb-war/nbproject/private/
+/sample-mdb/sample-mdb-ejb/nbproject/private/
+/pixup-mdb/nbproject/private/
+/pixup-mdb/pixup-mdb-war/nbproject/private/
+/pixup-mdb/pixup-mdb-ejb/nbproject/private/
+/pixup-dao-jpa/nbproject/private/
+/pixup-bo-jpa/nbproject/private/
+/pixup-dao-jpa/build/
+/pixup-bo-jpa/build/
+/pixup-dao-jpa/dist/
+/pixup-bo-jpa/dist/

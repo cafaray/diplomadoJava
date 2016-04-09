@@ -1,0 +1,33 @@
+CREATE TABLE oferta (
+    identificador int auto_increment,
+    iddisco int not null,
+    idusuario int not null,
+    fechainicio date not null,
+    fechafinal date not null,
+    precio double(10,2) not null,
+    texto_oferta varchar(2000) not null default '',
+    primary key(identificador),
+    foreign key(iddisco)
+        references disco(id)
+        on delete cascade on update cascade,
+    foreign key(idusuario)
+        references usuario(id)
+        on delete cascade on update cascade
+);
+
+
+select * from disco;
+
+-- INSERT INTO promocion VALUES (0,'2010-01-01', '2010-01-01','promo-demo',10,1);
+
+INSERT INTO disco VALUES (0,'Thriller','1982-11-01', 220.5,101,1,1,1,1,1,1);
+INSERT INTO disco VALUES (0,'The Dark Side of the Moon','1973-12-12', 282.0,101,1,1,1,1,1,1);
+INSERT INTO disco VALUES (0,'Back in Black','1980-02-21', 282.0,101,1,1,1,1,1,1);
+INSERT INTO disco VALUES (0,'The Bodyguard','1982-11-9', 282.0,101,1,1,1,1,1,1);
+INSERT INTO disco VALUES (0,'Rumours','1977-2-14', 270.0,101,1,1,1,1,1,1);
+INSERT INTO disco VALUES (0,'Saturday Night Fever','1977-3-21', 170.0,101,1,1,1,1,1,1);
+INSERT INTO disco VALUES (0,'El fantasma de la ópera','1986-5-1', 120.0,101,1,1,1,1,1,1);
+INSERT INTO disco VALUES (0,'Come on Over','1997-7-14', 220.0,101,1,1,1,1,1,1);
+INSERT INTO disco VALUES (0,'Led Zeppelin IV','1971-6-16', 290.0,101,1,1,1,1,1,1);
+INSERT INTO disco VALUES (0,'Born in the U.S.A.','1984-3-12', 190.0,101,1,1,1,1,1,1);
+

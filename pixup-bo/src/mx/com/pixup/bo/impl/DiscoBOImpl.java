@@ -12,6 +12,7 @@ public class DiscoBOImpl implements DiscoBO{
 
     private static DiscoDAO dao;
     
+    
     public DiscoBOImpl() {
         dao = new DiscoDAOImpl();
     }

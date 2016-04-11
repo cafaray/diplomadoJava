@@ -57,7 +57,7 @@ public interface GenericDAO <T, Id extends Serializable> {
      * @return Instancia
      * @throws mx.com.pixup.dao.exception.PixUpDAOException
      */
-    public T findById(String id)throws PixUpDAOException;
+    public T findById(Integer id)throws PixUpDAOException;
 
 
 }

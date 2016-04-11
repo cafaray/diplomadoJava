@@ -117,7 +117,7 @@ public class GenericDAOImpl <T, Id extends Serializable> implements GenericDAO<T
 	}
 
         @Override
-	public T findById(String id)throws PixUpDAOException{
+	public T findById(Integer id)throws PixUpDAOException{
 		EntityManager em = factory.createEntityManager();
 		try{
 			return em.find(clase, id);

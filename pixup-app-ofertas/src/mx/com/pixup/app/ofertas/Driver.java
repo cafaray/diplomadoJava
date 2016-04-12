@@ -28,7 +28,7 @@ public class Driver {
 
     private final static OfertaBO ofertaBo = new OfertaBOImpl();
     private final static DiscoBO discoBo = new DiscoBOImpl();
-    
+
     public static void main(String[] args) {
 //        try{
 //            Driver driver = new Driver();
@@ -42,34 +42,34 @@ public class Driver {
 //        App app = new App();
 //        app.abreConexion();        
 //        System.exit(0);
-        Driver driver = new Driver();                
+        Driver driver = new Driver();
         driver.lanzarMensaje();
     }
-    
-    public void listaOfertas() throws PixUpBOException{
+
+    public void listaOfertas() throws PixUpBOException {
         List<OfertaWrapper> ofertas = ofertaBo.listarVigentes();
-        DecimalFormat format = new DecimalFormat("#,###,##0.##");        
-        for(OfertaWrapper oferta:ofertas){
+        DecimalFormat format = new DecimalFormat("#,###,##0.##");
+        for (OfertaWrapper oferta : ofertas) {
             System.out.printf("%d. %s, %s%n", oferta.getIdentificador(), oferta.getTituloDisco(), format.format(oferta.getPrecio()));
-        }        
-    }
-    
-    public void listaDiscos() throws PixUpBOException{
-        List<Disco> discos = discoBo.listar();
-        DecimalFormat format = new DecimalFormat("#,###,##0.##");        
-        for(Disco disco:discos){
-            System.out.printf("%d. %s, %s%n",disco.getId(), disco.getTitulo(), format.format(disco.getPrecio()));
         }
     }
 
-    public void registraOferta()throws PixUpBOException {
-        
+    public void listaDiscos() throws PixUpBOException {
+        List<Disco> discos = discoBo.listar();
+        DecimalFormat format = new DecimalFormat("#,###,##0.##");
+        for (Disco disco : discos) {
+            System.out.printf("%d. %s, %s%n", disco.getId(), disco.getTitulo(), format.format(disco.getPrecio()));
+        }
+    }
+
+    public void registraOferta() throws PixUpBOException {
+
         Calendar calendario = Calendar.getInstance();
         calendario.set(Calendar.YEAR, 2016);
         calendario.set(Calendar.MONTH, 0);
         calendario.set(Calendar.DATE, 9);
         Date inicio = calendario.getTime();
-        
+
         // marca la fecha de fin de la oferta de cada disco
         calendario.set(Calendar.MONTH, 11);
         calendario.set(Calendar.DATE, 31);
@@ -83,22 +83,22 @@ public class Driver {
         oferta.setUsuario(1);
         ofertaBo.agregar(oferta);
     }
-    
+
     public void eliminaOferta(int identificador) throws PixUpBOException {
         ofertaBo.eliminar(identificador);
         listaOfertas();
     }
-    
+
     public void lanzarMensaje() {
-    QueueConnection conexion = null;
-		QueueSender sender;
-		QueueSession session;
-		try {
-			Context ctx = getContext();
-			Queue queue = (Queue)ctx.lookup("queue/PixUpMensajero");
-			QueueConnectionFactory factory = (QueueConnectionFactory)ctx.lookup("ConnectionFactory");
-			conexion = factory.createQueueConnection();
-			session = conexion.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
+        QueueConnection conexion = null;
+        QueueSender sender;
+        QueueSession session;
+        try {
+            Context ctx = getContext();
+            Queue queue = (Queue) ctx.lookup("queue/PixUpMensajero");
+            QueueConnectionFactory factory = (QueueConnectionFactory) ctx.lookup("ConnectionFactory");
+            conexion = factory.createQueueConnection();
+            session = conexion.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
 //			Usuario usuario = new Usuario();
 //			usuario.setNombre("Juan");
 //			usuario.setApPaterno("López");
@@ -107,24 +107,27 @@ public class Driver {
 //			usuario.setNick("nick");
 //			usuario.setPassword("sinPassword");
 //			ObjectMessage message = session.createObjectMessage(new Oferta());
-                        TextMessage message = (TextMessage) session.createTextMessage();
-                        message.setText("HEY!!!");
-			message.setStringProperty("x", "x");			
-			
-			sender = session.createSender(queue);
-			sender.send(message);
-			
-		} catch (NamingException | JMSException e) {
-			e.printStackTrace(System.out);
-		}finally{
-                    try {
-                        if (conexion != null) {
-                            conexion.close();
-                        }
-                    } catch (JMSException e) {
-                    }			
-		}
+            TextMessage message = (TextMessage) session.createTextMessage();
+            message.setText("HEY!!!");
+            message.setStringProperty("x", "x");
+
+            sender = session.createSender(queue);
+            sender.send(message);
+
+        } catch (NamingException e) {
+            e.printStackTrace(System.out);
+        } catch (JMSException e) {
+            e.printStackTrace(System.out);
+        } finally {
+            try {
+                if (conexion != null) {
+                    conexion.close();
+                }
+            } catch (JMSException e) {
+            }
+        }
     }
+
     private Context getContext() throws NamingException {
         Properties properties = new Properties();
         properties.put(Context.INITIAL_CONTEXT_FACTORY,
@@ -135,5 +138,5 @@ public class Driver {
         Context ctx = new InitialContext(properties);
         return ctx;
     }
-    
+
 }

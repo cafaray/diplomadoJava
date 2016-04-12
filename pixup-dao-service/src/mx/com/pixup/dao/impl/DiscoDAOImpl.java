@@ -56,7 +56,7 @@ public class DiscoDAOImpl implements DiscoDAO {
             String sql = "SELECT id, titulo, fecha_lanzamiento, precio, cantidad_disponible FROM disco;";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rst = stm.executeQuery();
-            List<Disco> discos = new LinkedList<>();
+            List<Disco> discos = new LinkedList<Disco>();
             while(rst.next()){                                
                 Disco disco = rellenaDisco(rst);
                 discos.add(disco);

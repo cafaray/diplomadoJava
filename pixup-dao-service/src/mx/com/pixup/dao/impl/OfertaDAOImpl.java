@@ -181,7 +181,7 @@ public class OfertaDAOImpl implements OfertaDAO {
             String sql = "SELECT identificador, iddisco, fechainicio, fechafinal, precio FROM oferta;";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rst = stm.executeQuery();
-            List<Oferta> ofertas = new LinkedList<>();
+            List<Oferta> ofertas = new LinkedList<Oferta>();
             while(rst.next()){                                
                 Oferta oferta = rellenaOferta(rst);
                 ofertas.add(oferta);
@@ -209,7 +209,7 @@ public class OfertaDAOImpl implements OfertaDAO {
             String sql = "SELECT identificador, iddisco, fechainicio, fechafinal, A.precio precio, texto_oferta, titulo FROM oferta A INNER JOIN disco B ON A.iddisco = B.id;";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rst = stm.executeQuery();
-            List<OfertaWrapper> ofertas = new LinkedList<>();
+            List<OfertaWrapper> ofertas = new LinkedList<OfertaWrapper>();
             while(rst.next()){                
                 Oferta oferta = rellenaOferta(rst);
                 OfertaWrapper wrapper = new OfertaWrapper(oferta);

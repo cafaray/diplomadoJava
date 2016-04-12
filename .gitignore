@@ -39,3 +39,9 @@
 /pixup-bo-jpa/build/
 /pixup-dao-jpa/dist/
 /pixup-bo-jpa/dist/
+/pixup-eap-MDB/dist/
+/pixup-eap-MDB/build/
+/pixup-eap/build/
+/pixup-eap/pixup-eap-war/build/
+/pixup-eap/pixup-eap-war/dist/
+/pixup-eap/dist/

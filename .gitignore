@@ -45,3 +45,12 @@
 /pixup-eap/pixup-eap-war/build/
 /pixup-eap/pixup-eap-war/dist/
 /pixup-eap/dist/
+/pixup-ws/nbproject/private/
+/pixup-ws/build/
+/pixup-ws/dist/
+/pixup-ws-client/nbproject/private/
+/pixup-ws-client/build/
+/pixup-ws-client/dist/
+/PixUp-APIRest/nbproject/private/
+/PixUp-APIRest/build/
+/PixUp-APIRest/dist/

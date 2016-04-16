@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="PixupDaoPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>mx.com.pixup.model.jpa.Disco</class>
-    <class>mx.com.pixup.model.jpa.Disquera</class>
-    <class>mx.com.pixup.model.jpa.GeneroMusical</class>
-    <class>mx.com.pixup.model.jpa.Idioma</class>
-    <class>mx.com.pixup.model.jpa.Iva</class>
-    <class>mx.com.pixup.model.jpa.Oferta</class>
-    <class>mx.com.pixup.model.jpa.Pais</class>
-    <class>mx.com.pixup.model.jpa.Promocion</class>
-    <class>mx.com.pixup.model.jpa.Usuario</class>
+      <jta-data-source>java:/PixUp-DS</jta-data-source>
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>mx.com.pixup.model.jpa.Disco</class>
+        <class>mx.com.pixup.model.jpa.Disquera</class>
+        <class>mx.com.pixup.model.jpa.GeneroMusical</class>
+        <class>mx.com.pixup.model.jpa.Idioma</class>
+        <class>mx.com.pixup.model.jpa.Iva</class>
+        <class>mx.com.pixup.model.jpa.Oferta</class>
+        <class>mx.com.pixup.model.jpa.Pais</class>
+        <class>mx.com.pixup.model.jpa.Promocion</class>
+        <class>mx.com.pixup.model.jpa.Usuario</class>
+        <shared-cache-mode>ALL</shared-cache-mode>
+    <!--
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://132.248.75.120:3306/pixup6?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="diplojava6"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="Mas8547crp"/>
     </properties>
+    -->
   </persistence-unit>
 </persistence>

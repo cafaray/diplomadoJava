@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.4-b01. --><xs:schema xmlns:tns="http://ws.pixup.com.mx/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.pixup.com.mx/">
+
+<xs:element name="disco" type="tns:disco"></xs:element>
+
+<xs:element name="disquera" type="tns:disquera"></xs:element>
+
+<xs:element name="echo" type="tns:echo"></xs:element>
+
+<xs:element name="echoResponse" type="tns:echoResponse"></xs:element>
+
+<xs:element name="generoMusical" type="tns:generoMusical"></xs:element>
+
+<xs:element name="idioma" type="tns:idioma"></xs:element>
+
+<xs:element name="iva" type="tns:iva"></xs:element>
+
+<xs:element name="listadoDiscos" type="tns:listadoDiscos"></xs:element>
+
+<xs:element name="listadoDiscosResponse" type="tns:listadoDiscosResponse"></xs:element>
+
+<xs:element name="pais" type="tns:pais"></xs:element>
+
+<xs:element name="promocion" type="tns:promocion"></xs:element>
+
+<xs:complexType name="listadoDiscos">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listadoDiscosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:disco" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="disco">
+<xs:sequence>
+<xs:element name="cantidadDisponible" type="xs:int"></xs:element>
+<xs:element name="fechaLanzamiento" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="id" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="idDisquera" type="tns:disquera" minOccurs="0"></xs:element>
+<xs:element name="idGeneroMusical" type="tns:generoMusical" minOccurs="0"></xs:element>
+<xs:element name="idIdioma" type="tns:idioma" minOccurs="0"></xs:element>
+<xs:element name="idIva" type="tns:iva" minOccurs="0"></xs:element>
+<xs:element name="idPais" type="tns:pais" minOccurs="0"></xs:element>
+<xs:element name="idPromocion" type="tns:promocion" minOccurs="0"></xs:element>
+<xs:element name="precio" type="xs:float"></xs:element>
+<xs:element name="titulo" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="disquera">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="generoMusical">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="idioma">
+<xs:sequence>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="id" type="xs:int" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="iva">
+<xs:sequence>
+<xs:element name="fechaFin" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="fechaInicio" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="id" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="porcentaje" type="xs:float"></xs:element>
+<xs:element name="vigente" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pais">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="promocion">
+<xs:sequence>
+<xs:element name="fechaFin" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="fechaInicio" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="id" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="nombre" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="porcentajeDescuento" type="xs:float"></xs:element>
+<xs:element name="vigente" type="xs:boolean"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="echo">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="echoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

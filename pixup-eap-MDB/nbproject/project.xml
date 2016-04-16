@@ -6,10 +6,41 @@
             <name>pixup-eap-MDB</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <explicit-platform explicit-source-supported="true"/>
+            <included-library dirs="200">reference.pixup-model-jpa.jar</included-library>
+            <included-library dirs="200">reference.pixup-dao-jpa.jar</included-library>
+            <included-library dirs="200">reference.pixup-bo-jpa.jar</included-library>
+            <included-library dirs="200">libs.MySQLDriver.classpath</included-library>
+            <included-library dirs="200">libs.eclipselink.classpath</included-library>
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>
             <test-roots/>
         </data>
+        <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
+            <reference>
+                <foreign-project>pixup-bo-jpa</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>pixup-dao-jpa</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>pixup-model-jpa</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+        </references>
     </configuration>
 </project>

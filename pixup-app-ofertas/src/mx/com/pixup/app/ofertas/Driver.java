@@ -23,6 +23,12 @@ import mx.com.pixup.bo.impl.OfertaBOImpl;
 import mx.com.pixup.model.Disco;
 import mx.com.pixup.model.Oferta;
 import mx.com.pixup.model.wrapper.OfertaWrapper;
+import javax.xml.namespace.QName;
+import javax.xml.transform.Source;
+import javax.xml.ws.Dispatch;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.ws.Service;
+import java.io.StringReader;
 
 public class Driver {
 
@@ -44,6 +50,7 @@ public class Driver {
 //        System.exit(0);
         Driver driver = new Driver();
         driver.lanzarMensaje();
+        
     }
 
     public void listaOfertas() throws PixUpBOException {
@@ -99,17 +106,10 @@ public class Driver {
             QueueConnectionFactory factory = (QueueConnectionFactory) ctx.lookup("ConnectionFactory");
             conexion = factory.createQueueConnection();
             session = conexion.createQueueSession(false, QueueSession.AUTO_ACKNOWLEDGE);
-//			Usuario usuario = new Usuario();
-//			usuario.setNombre("Juan");
-//			usuario.setApPaterno("López");
-//			usuario.setApMaterno("Santana");
-//			usuario.setEmail("cafaray@gmail.com");
-//			usuario.setNick("nick");
-//			usuario.setPassword("sinPassword");
-//			ObjectMessage message = session.createObjectMessage(new Oferta());
+            //ObjectMessage message = session.createObjectMessage(new Oferta());
             TextMessage message = (TextMessage) session.createTextMessage();
-            message.setText("HEY!!!");
-            message.setStringProperty("x", "x");
+            message.setText("Gracias por usar los servicios de PixUp. En breve recibirás un correo con la información que solicitaste.");
+            message.setStringProperty("correo", "cafaray@gmail.com");
 
             sender = session.createSender(queue);
             sender.send(message);
@@ -128,6 +128,8 @@ public class Driver {
         }
     }
 
+    
+    
     private Context getContext() throws NamingException {
         Properties properties = new Properties();
         properties.put(Context.INITIAL_CONTEXT_FACTORY,

@@ -22,11 +22,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Oferta.findAll", query = "SELECT o FROM Oferta o"),
     @NamedQuery(name = "Oferta.findByIdentificador", query = "SELECT o FROM Oferta o WHERE o.identificador = :identificador"),
     @NamedQuery(name = "Oferta.findByIddisco", query = "SELECT o FROM Oferta o WHERE o.iddisco = :iddisco"),
-    @NamedQuery(name = "Oferta.findByIdusuario", query = "SELECT o FROM Oferta o WHERE o.idusuario = :idusuario"),
-    @NamedQuery(name = "Oferta.findByFechainicio", query = "SELECT o FROM Oferta o WHERE o.fechainicio = :fechainicio"),
-    @NamedQuery(name = "Oferta.findByFechafinal", query = "SELECT o FROM Oferta o WHERE o.fechafinal = :fechafinal"),
-    @NamedQuery(name = "Oferta.findByPrecio", query = "SELECT o FROM Oferta o WHERE o.precio = :precio"),
-    @NamedQuery(name = "Oferta.findByTextoOferta", query = "SELECT o FROM Oferta o WHERE o.textoOferta = :textoOferta")})
+    @NamedQuery(name = "Oferta.findByFechas", query = "SELECT o FROM Oferta o WHERE o.fechainicio <= :fechainicio AND o.fechafinal >= :fechafinal"),    
+})
 public class Oferta implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

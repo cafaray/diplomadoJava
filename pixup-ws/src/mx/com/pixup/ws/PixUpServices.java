@@ -28,7 +28,7 @@ public class PixUpServices {
         return "webService echo dice: ".concat(mensaje);
     }
     
-    @WebMethod(operationName = "listadoDiscos")
+    @WebMethod(operationName = "listado")
     public List<Disco> listadoDiscos() throws WebServiceException {        
         DiscoBO bo = new DiscoBOImpl();
         List<Disco> discos;        

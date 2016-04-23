@@ -3,6 +3,8 @@ package mx.com.pixup.ws.rest.impl;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -26,11 +28,15 @@ public class DiscoServicesImp implements DiscoServices {
     }
 
     @Override
+    @PUT
+    @Path("/agregar")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Disco agregar(Disco disco) throws PixUpBOException {
         return bo.agregar(disco);
     }
-
-    @GET
+        
+    @POST
     @Path("/test")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)

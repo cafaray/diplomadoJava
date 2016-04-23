@@ -1,10 +1,6 @@
 package mx.com.pixup.ws;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.soap.SOAPException;

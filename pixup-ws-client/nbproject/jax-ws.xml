@@ -5,7 +5,7 @@
     <client name="pixup-servicios">
       <wsdl-url>http://localhost:7070/pixup/pixup-servicios?wsdl</wsdl-url>
       <local-wsdl-file>localhost_7070/pixup/pixup-servicios.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">mx.com.pixup.ws.servicios</package-name>
+      <package-name forceReplace="true">mx.com.pixup.ws</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -34,7 +34,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>mx.com.pixup.ws.servicios</wsimport-option-value>
+          <wsimport-option-value>mx.com.pixup.ws</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

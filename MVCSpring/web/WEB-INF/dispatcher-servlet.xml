@@ -11,7 +11,7 @@
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
     <bean class="mx.com.pixup.controller.EcoController" p:funcionEco-ref="funcionEco" />
-    
+    <bean class="mx.com.pixup.controller.LoginController" p:loguearUsuario-ref="loguearUsuario" />
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
     for the index controller we are using ParameterizableViewController, so we must

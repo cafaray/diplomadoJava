@@ -10,20 +10,20 @@
 <message name="echoResponse">
 <part name="parameters" element="tns:echoResponse"></part>
 </message>
-<message name="listadoDiscos">
-<part name="parameters" element="tns:listadoDiscos"></part>
+<message name="listado">
+<part name="parameters" element="tns:listado"></part>
 </message>
-<message name="listadoDiscosResponse">
-<part name="parameters" element="tns:listadoDiscosResponse"></part>
+<message name="listadoResponse">
+<part name="parameters" element="tns:listadoResponse"></part>
 </message>
 <portType name="PixUpServices">
 <operation name="echo">
 <input wsam:Action="http://ws.pixup.com.mx/PixUpServices/echoRequest" message="tns:echo"></input>
 <output wsam:Action="http://ws.pixup.com.mx/PixUpServices/echoResponse" message="tns:echoResponse"></output>
 </operation>
-<operation name="listadoDiscos">
-<input wsam:Action="http://ws.pixup.com.mx/PixUpServices/listadoDiscosRequest" message="tns:listadoDiscos"></input>
-<output wsam:Action="http://ws.pixup.com.mx/PixUpServices/listadoDiscosResponse" message="tns:listadoDiscosResponse"></output>
+<operation name="listado">
+<input wsam:Action="http://ws.pixup.com.mx/PixUpServices/listadoRequest" message="tns:listado"></input>
+<output wsam:Action="http://ws.pixup.com.mx/PixUpServices/listadoResponse" message="tns:listadoResponse"></output>
 </operation>
 </portType>
 <binding name="PixUpServicesPortBinding" type="tns:PixUpServices">
@@ -37,7 +37,7 @@
 <soap:body use="literal"></soap:body>
 </output>
 </operation>
-<operation name="listadoDiscos">
+<operation name="listado">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

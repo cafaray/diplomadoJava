@@ -14,19 +14,19 @@
 
 <xs:element name="iva" type="tns:iva"></xs:element>
 
-<xs:element name="listadoDiscos" type="tns:listadoDiscos"></xs:element>
+<xs:element name="listado" type="tns:listado"></xs:element>
 
-<xs:element name="listadoDiscosResponse" type="tns:listadoDiscosResponse"></xs:element>
+<xs:element name="listadoResponse" type="tns:listadoResponse"></xs:element>
 
 <xs:element name="pais" type="tns:pais"></xs:element>
 
 <xs:element name="promocion" type="tns:promocion"></xs:element>
 
-<xs:complexType name="listadoDiscos">
+<xs:complexType name="listado">
 <xs:sequence></xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listadoDiscosResponse">
+<xs:complexType name="listadoResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:disco" minOccurs="0" maxOccurs="unbounded"></xs:element>
 </xs:sequence>

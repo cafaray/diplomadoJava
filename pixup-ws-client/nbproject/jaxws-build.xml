@@ -19,8 +19,7 @@
     <target name="wsimport-client-pixup-servicios" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/pixup-servicios"/>
         <property name="wsdl-pixup-servicios" location="xml-resources/web-service-references/pixup-servicios/wsdl/localhost_7070/pixup/pixup-servicios.wsdl"/>
-        <!-- encoding="${source.encoding}" -->
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/pixup-servicios" destdir="${build.generated.dir}/jax-wsCache/pixup-servicios" wsdl="${wsdl-pixup-servicios}" catalog="catalog.xml"  extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:7070/pixup/pixup-servicios?wsdl" xnocompile="true" xendorsed="true" package="mx.com.pixup.ws.servicios">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/pixup-servicios" destdir="${build.generated.dir}/jax-wsCache/pixup-servicios" wsdl="${wsdl-pixup-servicios}" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:7070/pixup/pixup-servicios?wsdl" xnocompile="true" xendorsed="true" package="mx.com.pixup.ws">
             <depends file="${wsdl-pixup-servicios}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/pixup-servicios"/>
         </wsimport>
@@ -32,7 +31,7 @@
     </target>
     <target name="wsimport-client-clean-pixup-servicios" depends="-init-project">
         <delete dir="${build.generated.dir}/jax-wsCache/pixup-servicios"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/mx/com/pixup/ws/servicios"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/mx/com/pixup/ws"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-pixup-servicios"/>
 </project>

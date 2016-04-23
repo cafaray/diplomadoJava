@@ -7,5 +7,5 @@ import mx.com.pixup.model.Disco;
 public interface DiscoBO {
 
     List<Disco> listar() throws PixUpBOException;
-    
+    Disco agregar(Disco disco) throws PixUpBOException;
 }

@@ -12,6 +12,9 @@ import mx.com.pixup.model.jpa.Usuario;
 public class UsuarioDAOImpl extends GenericDAOImpl<Usuario, Integer> implements UsuarioDAO {
 
     
+    public UsuarioDAOImpl(){
+        super(Usuario.class);
+    }
     
     public UsuarioDAOImpl(Class<Usuario> clase) {
         super(clase);
@@ -49,8 +52,9 @@ public class UsuarioDAOImpl extends GenericDAOImpl<Usuario, Integer> implements 
         em.getTransaction().begin();
         try{
             TypedQuery<Usuario> query = em.createNamedQuery("Usuario.findByEmail", Usuario.class);
-            query.setParameter("cuenta", email);
+            query.setParameter("email", email);
             List<Usuario> usuarios = query.getResultList();
+//            return query.getSingleResult();
             if(usuarios.size()>0){
                 return usuarios.get(0);
             } else {
@@ -98,6 +102,30 @@ public class UsuarioDAOImpl extends GenericDAOImpl<Usuario, Integer> implements 
     @Override
     public Usuario findById(Integer id) throws PixUpDAOException {
         return super.findById(id);
+    }
+
+    @Override
+    public List<Usuario> findByNombreCompleto(String nombre, String paterno, String materno) throws PixUpDAOException {
+        EntityManager em = factory.createEntityManager();
+        em.getTransaction().begin();
+        try{
+            TypedQuery<Usuario> query = em.createNamedQuery("Usuario.findByNombreCompleto", Usuario.class);
+            query.setParameter("nombre", "%"+nombre+"%");
+            query.setParameter("paterno", "%"+paterno+"%");
+            query.setParameter("materno","%"+ materno+"%");
+            List<Usuario> usuarios = query.getResultList();
+            return usuarios;
+
+        } catch(NullPointerException e){
+            e.printStackTrace(System.out);			            
+            throw new PixUpDAOException("Ocurrió un error al consultar los datos, se genero un resultado nulo.");
+        } catch(PersistenceException e){				
+            e.printStackTrace(System.out);			
+            throw new PixUpDAOException("Ocurrió un error al guardar, causado por: "+e.getCause());
+        }finally{				
+            em.close();
+        }	                
+                
     }
     
 }

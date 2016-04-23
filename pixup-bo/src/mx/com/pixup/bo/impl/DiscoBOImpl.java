@@ -10,17 +10,28 @@ import mx.com.pixup.model.Disco;
 
 public class DiscoBOImpl implements DiscoBO{
 
-    private static DiscoDAO dao;
+    
     
     
     public DiscoBOImpl() {
-        dao = new DiscoDAOImpl();
     }
 
     @Override
     public List<Disco> listar() throws PixUpBOException {
         try {
+            DiscoDAO dao = new DiscoDAOImpl();
             return dao.lista();
+        } catch (PixUpDAOException e) {
+            e.printStackTrace(System.out);
+            throw new PixUpBOException("Imposible listar los discos, ocurrió una excepción y no es posible generar la lista");
+        }
+    }
+
+    @Override
+    public Disco agregar(Disco disco) throws PixUpBOException {
+        try {
+            DiscoDAO dao = new DiscoDAOImpl();
+            return dao.inserta(disco);
         } catch (PixUpDAOException e) {
             e.printStackTrace(System.out);
             throw new PixUpBOException("Imposible listar los discos, ocurrió una excepción y no es posible generar la lista");

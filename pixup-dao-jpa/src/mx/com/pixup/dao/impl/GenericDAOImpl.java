@@ -179,4 +179,5 @@ public class GenericDAOImpl <T, Id extends Serializable> implements GenericDAO<T
 			em.close();
 		}
 	}
+               
 }

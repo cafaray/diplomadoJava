@@ -6,6 +6,8 @@ import mx.com.pixup.ws.PixUpServices;
 public class StartUp {
 
     
+    
+    
     public static void main(String args[]){
         String urlPartial = "http://localhost:7070/pixup/";
         

@@ -1,0 +1,10 @@
+<html>
+	<head>
+		<title>El applet guy</title>
+	</head>
+	<body>
+		<b>Hey, Sres. aqu&iacute; esta el applet:</b>
+		<applet code = "Ejercicio3.class" width= "100px" height="25px" />
+	</body>
+
+</html>

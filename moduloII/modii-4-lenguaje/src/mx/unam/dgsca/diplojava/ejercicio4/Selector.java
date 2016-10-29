@@ -12,7 +12,10 @@ public class Selector {
 			x = 1;
 			y = 3*x;
 			//TODO cómo se resuelve este problema?
-			z = Math.pow(x, 2) + y;
+			Double temp = Math.pow(x, 2) + y;
+
+			z = temp.intValue(); 
+			System.out.println("Valor de z"+z);
 		}else{
 			// No hacer nada
 		}		
@@ -35,17 +38,17 @@ public class Selector {
 		System.out.println("\tLa opción de \"e\" es para eliminar");
 		System.out.println("Selecciona una opción");
 		switch (opcion) {
-		case 'a':
-			System.out.println("Registrar: ");
-			break;
-		case 'm':
-			System.out.println("Modificar: ");
-			break;
-		case 'e':
-			System.out.println("Eliminar: ");
-			break;
-		default:
-			System.out.println("no se localizo la opción...");
+			case 'a':
+				System.out.println("Registrar: ");
+				break;
+			case 'm':
+				System.out.println("Modificar: ");
+				break;
+			case 'e':
+				System.out.println("Eliminar: ");
+				break;
+			default:
+				System.out.println("no se localizo la opción...");
 		}
 		
 	}

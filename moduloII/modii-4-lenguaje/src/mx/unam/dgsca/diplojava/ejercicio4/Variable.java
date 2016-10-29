@@ -12,6 +12,10 @@ public class Variable {
 	private int edad;
 	
 	
+	public static void main(String[] args){
+		System.out.println("resultado es: " + casting());
+	}
+	
 	public Variable(int edad){
 		this.setEdad(edad);
 	}
@@ -20,9 +24,9 @@ public class Variable {
 		//variables locales:
 		int x = 0;
 		int y = 1;
-		byte z;
-		z = x + y;
-		//int z = x + y;
+		//byte z;
+		//z = x + y;
+		int z = x + y;
 		//z = (byte)(x+y);
 	}
 
@@ -43,28 +47,34 @@ public class Variable {
 		//aplicar cast
 		short valorCorto;
 		valorLargo = Long.MAX_VALUE;
-		valorCorto = valorLargo;
+		//valorCorto = valorLargo;
 		//valorCorto = (short)valorLargo;
 		
 		// --> Cast de valores cortos:
 		short s1, s2, s3;
 		s1 = 21;
 		s2 = 20;
-		s3 = s1 + s2;
-		// s3 = (short)(s1+s2);
+		//s3 = s1 + s2;
+		 s3 = (short)(s1+s2);
 	}
 	
-	private void puntoFlotante(){
-		float float1 = 17.9;
-		//float float1 = 17.9f;
-		//float float1 = (float)17.9;				
+	private static short casting(){
+
+int x = 23;
+
+int  y = 17;
+
+int z = -1;
+
+z = ((x + y) - z) / 3;
+return (short)z;
 	}
 	
 	public void calculaEdad(){
 		int edadEnDias = getEdad() * 365;
 		long edadEnSegundos = edad * 365 * 24L * 60 *60;
 		
-		System.out.println("Tu edad en días: " + edadEnDias);
+		System.out.println("Tu edad en días: " + edadEnDias + 5);
 		System.out.println("Tu edad en segundo: " + edadEnSegundos);
 	}
 

@@ -5,17 +5,39 @@ import java.util.Date;
 
 public class Lanzador {
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
-		Lanzador lanzador = new Lanzador();
-		lanzador.generarIteracion(Short.MAX_VALUE);
 		
-//		String argumento = args[0];
-//		try {
-//			Long numeroIteraciones = Long.getLong(argumento);
-//			lanzador.generarIteracion(numeroIteraciones);
-//		} catch(NumberFormatException e){
-//			e.printStackTrace();
-//		}
+		Lanzador lanzador = new Lanzador();
+//		lanzador.generarIteracion(Short.MAX_VALUE);
+		String argumento;
+		long numeroIteraciones = Long.MAX_VALUE;		
+		
+		try {
+			try {				
+				argumento = args[0];
+				numeroIteraciones = Long.valueOf(argumento);
+			}catch(NumberFormatException e){
+				System.out.println("El argumento debe ser numérico-");				
+			}finally {
+				// NO HACER NADA, DEJAR EL VALOR DEFAULT
+			}								
+		} catch (ArrayIndexOutOfBoundsException e){
+			System.out.println("Podrías mandar al menos un parametro numérico");						
+		}
+		lanzador.generarIteracion(numeroIteraciones);
 	}
 
 	private void generarIteracion(long iteraciones){		
@@ -26,7 +48,12 @@ public class Lanzador {
 		System.out.printf("Fin de la iteracion: %s%n", dateFormat.format(new Date()));
 	}
 	
-	private class Iterador {
+	
+	
+	
+	
+	
+	public class Iterador {
 		private Long iteraciones;
 		
 		public Iterador(long iteraciones){
@@ -50,3 +77,5 @@ public class Lanzador {
 	}
 	
 }
+
+

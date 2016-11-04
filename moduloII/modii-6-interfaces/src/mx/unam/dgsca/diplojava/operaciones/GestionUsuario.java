@@ -6,6 +6,8 @@ import mx.unam.dgsca.diplojava.modelo.Usuario;
 
 public interface GestionUsuario {
 
+	int numero = 1;
+	
 	Usuario registrar(Usuario usuario);
 	Usuario modificar(Usuario usuario);
 	void desactivar(int identificador);

@@ -1,54 +1,54 @@
 package mx.unam.dgsca.diplojava.operaciones.impl;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import mx.unam.dgsca.diplojava.modelo.Usuario;
 import mx.unam.dgsca.diplojava.operaciones.GestionUsuario;
-import mx.unam.dgsca.diplojava.utiles.Catalogo;
 
 public abstract class GestionUsuarioAbstract implements GestionUsuario {
 
 	
-	public abstract void setTipoDefault(Catalogo tipo);
 	
-	public GestionUsuarioAbstract() {
-		// TODO Auto-generated constructor stub
-	}
+	public GestionUsuarioAbstract() {}
 
+	public abstract void restablecerContrasenia(String cuentaCorreo);
+	
 	@Override
 	public Usuario registrar(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return null;
+		// registra a un nuevo usuario, ya sea administrador, local o web
+		return usuario;
 	}
 
 	@Override
 	public Usuario modificar(Usuario usuario) {
-		// TODO Auto-generated method stub
+		// realiza la adecuación de un usuario existente, ya sea administrador, local o web
 		return null;
 	}
 
 	@Override
 	public void desactivar(int identificador) {
-		// TODO Auto-generated method stub
+		// desactiva una cuenta de usuario exsitente por su identificador, ya sea administrador, local o web
 		
 	}
 
 	@Override
 	public Usuario buscar(int identificador) {
-		// TODO Auto-generated method stub
+		// busca un usuario existente en el repositorio
 		return null;
 	}
 
 	@Override
 	public void desactivar(Usuario usuario) {
-		// TODO Auto-generated method stub
+		// desactiva una cuenta de usuario exsitente por su identificador, ya sea administrador, local o web
 		
 	}
 
 	@Override
 	public List<Usuario> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		// lista los usuarios existentes en el repositorio
+		List<Usuario> lista = new LinkedList<>();
+		return lista;
 	}
 
 }

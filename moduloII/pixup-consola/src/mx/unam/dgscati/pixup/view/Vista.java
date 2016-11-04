@@ -40,7 +40,7 @@ public final class Vista {
 		imprimeBienvenida();
 	}
 	
-	public void iniciar() throws PixUpBOException{
+	public void iniciar() {
 		//CONSOLA.printf("HEY");
 		char seleccion = '\0';
 		
@@ -71,7 +71,7 @@ public final class Vista {
 		} while(seleccion!=MENU_SALIDA);
 	}
 	
-	private void registrarUsuario() throws PixUpBOException{
+	private void registrarUsuario() {
 		
 		CatalogoBO catalogos = new CatalogoBOImpl();
 		UsuarioWrapper usuarioWrapper = new UsuarioWrapper();

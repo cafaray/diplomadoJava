@@ -25,26 +25,22 @@ public class CatalogoBOImpl implements CatalogoBO {
 
 	@Override
 	public String encontrarPreguntaSecretaPorId(int id) throws PixUpBOException {
-		try {
-			Catalogo elemento = PREGUNTA_SECRETA.buscarPorId(id);
-			return elemento.getDescripcion();
-		} catch (IndexOutOfBoundsException e) {
-			// TODO manejo de la excepción en caso de que no se localice el
-			// valor
-			throw new PixUpBOException(e);
-		}
+		
+		Catalogo elemento = PREGUNTA_SECRETA.buscarPorId(id);
+		return elemento.getDescripcion();
+		
+		// TODO manejo de la excepción en caso de que no se localice el valor
+		
 	}
 
 	@Override
 	public String encontrarTipousuarioPorId(int id) throws PixUpBOException {
-		try {
-			Catalogo elemento = TIPO_USUARIO.buscarPorId(id);
-			return elemento.getDescripcion();
-		} catch (IndexOutOfBoundsException e) {
-			// TODO manejo de la excepción en caso de que no se localice el
-			// valor
-			throw new PixUpBOException(e);
-		}
+
+		Catalogo elemento = TIPO_USUARIO.buscarPorId(id);
+		return elemento.getDescripcion();
+
+		// TODO manejo de la excepción en caso de que no se localice el valor
+	
 	}
 
 	private List<String> armaListado(List<Catalogo> lista) {

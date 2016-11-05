@@ -86,6 +86,10 @@ public class UsuarioWrapper {
 	public Usuario getUsuario() {
 		return usuario;
 	}
+	
+	public Date getFechaNacimientoDate(){
+		return usuario.getFechaNacimiento();
+	}
 
 	public Usuario toUsuario() throws PixUpBOException {
 		PreguntaSecreta preguntaSecreta = new PreguntaSecreta();
